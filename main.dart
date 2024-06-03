@@ -1,3 +1,7 @@
 void main() {
-  print('Hello World!');
+  var test;//Type: dynamic
+  test="test";
+  test=1;
+  test=true;
+  
 }
