@@ -7,4 +7,7 @@ void main(){
   //do something, go to api
   test = 'later';
   print(test);
+
+  const birthday = 0323;
+  print(birthday);
 }
