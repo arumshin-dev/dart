@@ -25,5 +25,12 @@ void main(){
   temp1?.isEmpty;
   print(temp1);
   print(temp1?.isEmpty);
+
+  bool alive = true;
+  int age = 34;
+  double money = 1.23;
+
+  num y = 12;
+  y=1.1;
   
 }
