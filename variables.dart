@@ -32,5 +32,15 @@ void main(){
 
   num y = 12;
   y=1.1;
+
+  var giveMeFive = true;
+  var numbers = [1,2,3,if(giveMeFive)5];
+  numbers.add(4);
+  print(numbers);
+if(giveMeFive){numbers.add(5);}
+  print(numbers);
   
+  List<int> numbers1 = [0,1];
+  numbers1.add(2);
+  print(numbers1);
 }
