@@ -51,4 +51,14 @@ void main() {
   var ag =  10;
   var greeting = 'Hello everyone, my name is $nm and I\'m ${ag+10}, nice to meet you!';
   print(greeting);
+
+  //Collection For
+  var oldFriends = ['junil','huchu'];
+  var newFriends = ['nico','lynn', 
+                   //for(var friend in oldFriends) "💖 $friend",
+                   ];
+  for(var friend in oldFriends) {
+    newFriends.add("💖 $friend");
+  } 
+  print(newFriends);
 }
