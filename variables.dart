@@ -61,4 +61,11 @@ void main() {
     newFriends.add("💖 $friend");
   } 
   print(newFriends);
+
+  //Maps
+  Map<int,bool> player = {
+    1:true,
+    2:false,
+    3:true,
+  };
 }
