@@ -68,4 +68,15 @@ void main() {
     2:false,
     3:true,
   };
+
+  //Set
+  // Dart Set -> JS Set Dart Set -> Python Set
+  // Dart List -> JS Array Dart List -> Python List
+  var numSet = {1,2,3,4};
+  numSet.add(1);//중복 안됨
+  numSet.add(1);
+  numSet.add(5);
+  numSet.add(5);
+  print(numSet);
+
 }
