@@ -19,6 +19,14 @@ String sayHello4({
   }){
   return 'Hello $name, you are $age, and you come from $country';
 }
+//optional positional parameters
+String sayHello5(
+  String name,
+  int age,
+  [String? country='Korea']
+  ){
+  return 'Hello $name, you are $age, and you come from $country';
+}
 
 void main(){
   sayHello('arum',9,'korea');
@@ -28,4 +36,5 @@ void main(){
   sayHello3(age:9,country:'korea',name:'named');
   sayHello3();
   print(sayHello4(age:9,country:'korea',name:'junil'));
+  print(sayHello5('huchu',6));
 }
