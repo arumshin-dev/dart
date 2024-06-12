@@ -27,6 +27,17 @@ String sayHello5(
   ){
   return 'Hello $name, you are $age, and you come from $country';
 }
+//QQ Operator
+String capitalizeName(String name) => name.toUpperCase();
+String capitalizeName2(String? name) /*{
+  if(name != null){
+    return name.toUpperCase();
+  } else{
+    return "ANON";
+  }
+}*/
+ //=> name != null ? name.toUpperCase() : "ANON";
+  => name?.toUpperCase() ?? 'ANON';
 
 void main(){
   sayHello('arum',9,'korea');
@@ -37,4 +48,10 @@ void main(){
   sayHello3();
   print(sayHello4(age:9,country:'korea',name:'junil'));
   print(sayHello5('huchu',6));
+  print(capitalizeName('arum'));
+  print(capitalizeName2(null));
+  String? name;
+  name ??= 'junil';
+  name ??= 'another';
+  print(name);
 }
