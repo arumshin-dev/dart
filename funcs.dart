@@ -39,6 +39,17 @@ String capitalizeName2(String? name) /*{
  //=> name != null ? name.toUpperCase() : "ANON";
   => name?.toUpperCase() ?? 'ANON';
 
+//Typedef
+List<int> reverseListOfNumbers(List<int> list) {
+  var reversed = list.reversed;
+  return reversed.toList();
+}
+typedef ListOfInts = List<int>;
+  ListOfInts reverseListOfNumbers1(ListOfInts list) {
+  var reversed = list.reversed;
+  return reversed.toList();
+}
+
 void main(){
   sayHello('arum',9,'korea');
   print(sayHello1('junil'));
@@ -54,4 +65,6 @@ void main(){
   name ??= 'junil';
   name ??= 'another';
   print(name);
+  print(reverseListOfNumbers([1,2,3]));
+  print(reverseListOfNumbers1([4,5,6]));
 }
