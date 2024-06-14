@@ -45,9 +45,17 @@ List<int> reverseListOfNumbers(List<int> list) {
   return reversed.toList();
 }
 typedef ListOfInts = List<int>;
-  ListOfInts reverseListOfNumbers1(ListOfInts list) {
+ListOfInts reverseListOfNumbers1(ListOfInts list) {
   var reversed = list.reversed;
   return reversed.toList();
+}
+
+String sayHi(Map<String, String> userInfo){
+  return "Hi ${userInfo['name']}";
+}
+typedef UserInfo = Map<String, String>;
+String sayHi1(UserInfo userInfo){
+  return "Hi ${userInfo['name']}";
 }
 
 void main(){
@@ -67,4 +75,9 @@ void main(){
   print(name);
   print(reverseListOfNumbers([1,2,3]));
   print(reverseListOfNumbers1([4,5,6]));
+
+  print(sayHi({"name":"arum"}));
+  print(sayHi({"sfdsd":"arum"}));
+  print(sayHi1({"name":"arum"}));
+  print(sayHi1({"sfdsd":"arum"}));
 }
