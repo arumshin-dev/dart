@@ -60,10 +60,8 @@ class Player {
   late final String name;
   late int xp;
 
-  Player(String name, int xp){
-    this.name=name;
-    this.xp=xp;
-  }
+  Player(this.name,this.xp);
+  
   void sayHelloPlayer(){
     print("Hi my name is $name, my xp is $xp");
   }
