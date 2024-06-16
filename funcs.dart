@@ -57,10 +57,16 @@ String sayHi1(UserInfo userInfo) {
 }
 
 class Player {
-  late final String name;
-  late int xp;
+  final String name;
+  int xp;
+  String team;
+  int age;
 
-  Player(this.name,this.xp);
+  Player({required this.name,
+          required this.xp,
+          required this.team,
+          required this.age
+          });
   
   void sayHelloPlayer(){
     print("Hi my name is $name, my xp is $xp");
@@ -90,8 +96,8 @@ void main() {
   print(sayHi1({"name": "arum"}));
   print(sayHi1({"sfdsd": "arum"})); // 'UNKNOWN'으로 반환됨
 
-  var player = Player('arum',1500);
+  var player = Player(name:'arum',xp:1500,team:'red',age:12);
   player.sayHelloPlayer();
-  var player2 = Player('junil',2500);
+  var player2 = Player(name:'junil',xp:2500,team:'red',age:12);
   player2.sayHelloPlayer();
 }
