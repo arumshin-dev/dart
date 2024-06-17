@@ -58,18 +58,32 @@ String sayHi1(UserInfo userInfo) {
 
 class Player {
   final String name;
-  int xp;
+  int xp, age;
   String team;
-  int age;
 
   Player({required this.name,
           required this.xp,
           required this.team,
           required this.age
           });
-  
+  Player.createBluePlayer({required String name, required int age}) : 
+        this.age = age,
+        this.name = name, 
+        this.team = 'blue', 
+        this.xp = 0;
+
+  Player.createRedPlayer(String name, int age)
+    :
+      this.age = age,
+      this.name = name,
+      this.team = 'red',
+      this.xp = 0;
+
   void sayHelloPlayer(){
     print("Hi my name is $name, my xp is $xp");
+  }
+  void sayHelloTeamPlayer(){
+    print("Hi my name is $name, my team is $team, my age is $age, and my xp is $xp");
   }
 }
 
@@ -100,4 +114,8 @@ void main() {
   player.sayHelloPlayer();
   var player2 = Player(name:'junil',xp:2500,team:'red',age:12);
   player2.sayHelloPlayer();
+  var BluePlayer = Player.createBluePlayer(name: "arum", age: 9);
+  BluePlayer.sayHelloTeamPlayer();
+  var RedPlayer = Player.createRedPlayer("junil", 9);
+  RedPlayer.sayHelloTeamPlayer();
 }
