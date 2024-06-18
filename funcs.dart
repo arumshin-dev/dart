@@ -87,6 +87,20 @@ class Player {
   }
 }
 
+class Players{
+  final String name;
+  int xp;
+  String team;
+
+  Players.fromJson(Map<String, dynamic> playerJson) :
+    name = playerJson['name'],
+    xp = playerJson['xp'],
+    team = playerJson['team'];
+
+  void sayHelloPlayers(){
+    print("Hi my name is $name, my team is $team, my xp is $xp");
+  }
+}
 
 void main() {
   sayHello('arum', 9, 'korea');
@@ -118,4 +132,27 @@ void main() {
   BluePlayer.sayHelloTeamPlayer();
   var RedPlayer = Player.createRedPlayer("junil", 9);
   RedPlayer.sayHelloTeamPlayer();
+
+  var apiData = [
+    {
+      "name" : "arum",
+      "team" : "red",
+      "xp" : 0,
+    },
+    {
+      "name" : "junil",
+      "team" : "red",
+      "xp" : 0,
+    },
+    {
+      "name" : "huchu",
+      "team" : "red",
+      "xp" : 0,
+    },
+  ];
+
+  apiData.forEach(((playerJson) {
+    var players = Players.fromJson(playerJson);
+    players.sayHelloPlayers();
+  }));
 }
