@@ -57,7 +57,7 @@ String sayHi1(UserInfo userInfo) {
 }
 
 class Player {
-  final String name;
+  String name;
   int xp, age;
   String team;
 
@@ -155,4 +155,24 @@ void main() {
     var players = Players.fromJson(playerJson);
     players.sayHelloPlayers();
   }));
+
+  var arum = Player(name: 'arum', xp: 1200, team: 'red', age: 6);
+  arum.name = 'huchu';
+  arum.xp = 120000;
+  arum.team = 'blue';
+  arum.age = 5;
+
+  var junil = Player(name: 'junil', xp: 1000, team: 'red', age: 6)
+    ..name = 'huchu'
+    ..xp = 1200000
+    ..team = 'blue'
+    ..age = 4;
+
+  var huchu = Player(name: 'huchu', xp: 1000, team: 'red', age: 6);
+  var arumi = huchu
+    ..name = 'arumi'
+    ..xp = 1000
+    ..team = 'purple'
+    ..age = 3
+    ..sayHelloTeamPlayer();
 }
