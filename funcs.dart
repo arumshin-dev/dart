@@ -55,11 +55,15 @@ typedef UserInfo = Map<String, String>;
 String sayHi1(UserInfo userInfo) {
   return "Hi ${userInfo['name'] ?? 'UNKNOWN'}";
 }
+enum Team { red, blue }
+
+enum XPLevel { beginner, medium, pro }
 
 class Player {
   String name;
-  int xp, age;
-  String team;
+  int age;
+  XPLevel xp;
+  Team team;
 
   Player({required this.name,
           required this.xp,
@@ -69,15 +73,15 @@ class Player {
   Player.createBluePlayer({required String name, required int age}) : 
         this.age = age,
         this.name = name, 
-        this.team = 'blue', 
-        this.xp = 0;
+        this.team = Team.red, 
+        this.xp = XPLevel.beginner;
 
   Player.createRedPlayer(String name, int age)
     :
       this.age = age,
       this.name = name,
-      this.team = 'red',
-      this.xp = 0;
+      this.team = Team.red,
+      this.xp = XPLevel.beginner;
 
   void sayHelloPlayer(){
     print("Hi my name is $name, my xp is $xp");
@@ -124,9 +128,9 @@ void main() {
   print(sayHi1({"name": "arum"}));
   print(sayHi1({"sfdsd": "arum"})); // 'UNKNOWN'으로 반환됨
 
-  var player = Player(name:'arum',xp:1500,team:'red',age:12);
+  var player = Player(name:'arum',xp:XPLevel.medium,team:Team.red,age:12);
   player.sayHelloPlayer();
-  var player2 = Player(name:'junil',xp:2500,team:'red',age:12);
+  var player2 = Player(name:'junil',xp:XPLevel.pro,team:Team.red,age:12);
   player2.sayHelloPlayer();
   var BluePlayer = Player.createBluePlayer(name: "arum", age: 9);
   BluePlayer.sayHelloTeamPlayer();
@@ -156,23 +160,23 @@ void main() {
     players.sayHelloPlayers();
   }));
 
-  var arum = Player(name: 'arum', xp: 1200, team: 'red', age: 6);
+  var arum = Player(name: 'arum', xp: XPLevel.medium, team: Team.red, age: 6);
   arum.name = 'huchu';
-  arum.xp = 120000;
-  arum.team = 'blue';
+  arum.xp = XPLevel.pro;
+  arum.team = Team.blue;
   arum.age = 5;
 
-  var junil = Player(name: 'junil', xp: 1000, team: 'red', age: 6)
+  var junil = Player(name: 'junil', xp: XPLevel.medium, team: Team.red, age: 6)
     ..name = 'huchu'
-    ..xp = 1200000
-    ..team = 'blue'
+    ..xp = XPLevel.pro
+    ..team = Team.blue
     ..age = 4;
 
-  var huchu = Player(name: 'huchu', xp: 1000, team: 'red', age: 6);
+  var huchu = Player(name: 'huchu', xp: XPLevel.medium, team: Team.red, age: 6);
   var arumi = huchu
     ..name = 'arumi'
-    ..xp = 1000
-    ..team = 'purple'
+    ..xp = XPLevel.medium
+    ..team = Team.blue
     ..age = 3
     ..sayHelloTeamPlayer();
 }
