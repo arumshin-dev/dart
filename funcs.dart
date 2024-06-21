@@ -55,11 +55,18 @@ typedef UserInfo = Map<String, String>;
 String sayHi1(UserInfo userInfo) {
   return "Hi ${userInfo['name'] ?? 'UNKNOWN'}";
 }
+
+//enum
 enum Team { red, blue }
 
 enum XPLevel { beginner, medium, pro }
 
-class Player {
+//Abstract Classes
+abstract class Human {
+  void walk();
+}
+
+class Player extends Human{
   String name;
   int age;
   XPLevel xp;
@@ -89,8 +96,19 @@ class Player {
   void sayHelloTeamPlayer(){
     print("Hi my name is $name, my team is $team, my age is $age, and my xp is $xp");
   }
+
+  void walk(){
+    print('im walking');
+  }
 }
 
+class Coach extends Human {
+  void walk() {
+    print('the coach is walking');
+  }
+}
+
+//Constructors Json
 class Players{
   final String name;
   int xp;
@@ -160,6 +178,7 @@ void main() {
     players.sayHelloPlayers();
   }));
 
+  ////Cascade Notation
   var arum = Player(name: 'arum', xp: XPLevel.medium, team: Team.red, age: 6);
   arum.name = 'huchu';
   arum.xp = XPLevel.pro;
