@@ -108,6 +108,30 @@ class Coach extends Human {
   }
 }
 
+//Inheritance 
+class Human1 {
+  final String name;
+  Human1(this.name);
+  void sayHello(){
+    print("Hi my name is $name");
+  }
+}
+
+class Player1 extends Human1 {
+  final Team team;
+
+  Player1({
+    required this.team,
+    required String name,
+  }) : super(name);
+
+  @override
+  void sayHello(){
+    super.sayHello();
+    print('and I play for ${team}');
+  }
+}
+
 //Constructors Json
 class Players{
   final String name;
@@ -198,4 +222,6 @@ void main() {
     ..team = Team.blue
     ..age = 3
     ..sayHelloTeamPlayer();
+
+  var player1 = Player1(team: Team.red, name: 'arum');
 }
