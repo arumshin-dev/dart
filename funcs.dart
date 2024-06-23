@@ -148,6 +148,33 @@ class Players{
   }
 }
 
+//Mixins
+mixin Strong {
+  final double strengthLevel = 1500.99;
+}
+
+  mixin QuickRunner {
+  void runQuick() {
+    print("ruuuunn!");
+  }
+}
+
+  mixin Tall {
+  final double height = 1.99;
+}
+
+class Player2 with Strong, QuickRunner, Tall{
+  final Team team;
+
+  Player2({
+    required this.team,
+  });
+}
+
+class Horse with Strong, QuickRunner{}
+
+class Kid with QuickRunner{}
+
 void main() {
   sayHello('arum', 9, 'korea');
   print(sayHello1('junil'));
